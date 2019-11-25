@@ -1,4 +1,3 @@
-
 Array.prototype.toKey = function (keyname) {
     var newArray = [];
     this.forEach(element => {
@@ -30,16 +29,18 @@ Array.prototype.sortSubkeyTree = function (keynames) {
     });
 }
 
+// example objects
+
 var myarray = [];
 for (let index = 0; index < 12; index++) {
     myarray.push({
         id: index,
-        foom: "lemondrops*dewberries".substring(index),
-        a: {b: {c: 12 - index}}
+        foom: 'lemondrops*dewberries'.substring(index),
+        a: {b: 12 - index}
     });
 }
 
-console.log(JSON.stringify(myarray.sortSubkeyTree(["a", "b", "c"]), null, 2));
+console.log(myarray.sortSubkeyTree(["a", "b"]));
 
 // console.log(JSON.stringify(myarray, null, 2));
 // console.log("\n\n nice, now what? \n\n");
